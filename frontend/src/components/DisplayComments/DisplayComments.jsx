@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect } from "react";
+import CreateComment from "../CreateComment/CreateComment";
 
 const DisplayComments = (props) => {
 
@@ -15,6 +16,7 @@ const DisplayComments = (props) => {
 
     return ( 
         <div>
+            <CreateComment selectedVideoId={props.selectedVideoId} videoId={props.videoId} userCode={props.userCode} getComments={getComments} user={props.user} />
             {props.videoComments.map((comment, index) => {
                 return (
                     <div className="form-grid">
